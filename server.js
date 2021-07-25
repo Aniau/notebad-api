@@ -23,4 +23,4 @@ app.listen(3000, () => {
 
 require("./app/routes/note.routes.js")(app);
 
-//app.listen(...);
+app.listen();

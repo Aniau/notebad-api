@@ -1,11 +1,11 @@
 module.exports = app => {
-    const note = require("../controllers/note.controller");
+    const note = require("../controllers/note.controller.js");
   
     // Create a new Customer
     app.post("/note", note.create);
   
     // Retrieve all Customers
-    app.get("/note", note.getAll);
+    app.get("/note", note.findAll);
   
     // Retrieve a single Customer with customerId
     app.get("/note/:noteId", note.findOne);
