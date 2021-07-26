@@ -51,10 +51,10 @@ Note.getAll = result => {
   });
 };
 
-Note.updateById = (id, note, result) => {
+Note.updateById = (note, result) => {
   sql.query(
     "UPDATE notepad SET title = ?, description = ? WHERE id = ?",
-    [note.title, note.description, id],
+    [note.title, note.description, note.id],
     (err, res) => {
       if (err) {
         console.log("error: ", err);
