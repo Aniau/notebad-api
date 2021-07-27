@@ -64,10 +64,10 @@ exports.update = (req, res) => {
         message: "Content can not be empty!"
       });
     }
-  
+    
     Note.updateById(
       req.params.noteId,
-      new Customer(req.body),
+      new Note(req.body),
       (err, data) => {
         if (err) {
           if (err.kind === "not_found") {

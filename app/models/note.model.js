@@ -2,7 +2,8 @@ const sql = require("./db.js");
 
 // constructor
 const Note = function(note) {
-  this.title = note.ttle;
+  this.id = note.id;
+  this.title = note.title;
   this.description = note.description;
 };
 
@@ -51,10 +52,10 @@ Note.getAll = result => {
   });
 };
 
-Note.updateById = (note, result) => {
+Note.updateById = (id, note, result) => {
   sql.query(
     "UPDATE notepad SET title = ?, description = ? WHERE id = ?",
-    [note.title, note.description, note.id],
+    [note.title, note.description, id],
     (err, res) => {
       if (err) {
         console.log("error: ", err);
